@@ -2,13 +2,80 @@
 
 [ext_resource type="Texture2D" uid="uid://hyviky1gv0ep" path="res://Assets/Slime1_Idle_without_shadow.png" id="2_i3pqv"]
 [ext_resource type="Script" uid="uid://1qr0rxxo33rc" path="res://Scripts/gravity.gd" id="2_onrkg"]
+[ext_resource type="Texture2D" uid="uid://dckdgxxy1pdku" path="res://Assets/Slime1_Walk_without_shadow.png" id="3_i3pqv"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ofo7f"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqtel"]
+atlas = ExtResource("3_i3pqv")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sweqy"]
+atlas = ExtResource("3_i3pqv")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hs0m"]
+atlas = ExtResource("3_i3pqv")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jxqw"]
+atlas = ExtResource("3_i3pqv")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dw050"]
+atlas = ExtResource("3_i3pqv")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b26j0"]
+atlas = ExtResource("3_i3pqv")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7ghd"]
+atlas = ExtResource("3_i3pqv")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvl01"]
+atlas = ExtResource("3_i3pqv")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_72mox"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqtel")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sweqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hs0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jxqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dw050")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b26j0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7ghd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvl01")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=233822148]
 script = ExtResource("2_onrkg")
+GRAVITY = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=48142705]
+visible = false
 texture_filter = 3
 texture = ExtResource("2_i3pqv")
 offset = Vector2(0, -10)
@@ -24,6 +91,18 @@ physics_material_override = SubResource("PhysicsMaterial_ofo7f")
 [node name="PinJoint2D" type="PinJoint2D" parent="." unique_id=395570983]
 node_a = NodePath("../StaticBody2D")
 node_b = NodePath("../CollisionShape2D/RigidBody2D")
+bias = 0.9
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1149025371]
 position = Vector2(0, -64)
+
+[node name="Node" type="Node" parent="." unique_id=767513642]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1864661676]
+texture_filter = 3
+sprite_frames = SubResource("SpriteFrames_72mox")
+frame_progress = 0.65840745
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=4256423]
+offset = Vector2(-10, -10)
+anchor_mode = 0
