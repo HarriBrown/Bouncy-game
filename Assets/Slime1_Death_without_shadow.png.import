@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://m81mu7wbc7u5"
-path="res://.godot/imported/Slime1_Death_without_shadow.png-098ed276db9ef5cf51ba597cf9805421.ctex"
+path="res://.godot/imported/Slime1_Death_without_shadow.png-2289ada9e585b4f56b464feab3839a7e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Slime1_Death_without_shadow.png"
-dest_files=["res://.godot/imported/Slime1_Death_without_shadow.png-098ed276db9ef5cf51ba597cf9805421.ctex"]
+source_file="res://Assets/Slime1_Death_without_shadow.png"
+dest_files=["res://.godot/imported/Slime1_Death_without_shadow.png-2289ada9e585b4f56b464feab3839a7e.ctex"]
 
 [params]
 

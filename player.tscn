@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://gom8b28h7k13"]
 
-[ext_resource type="Texture2D" uid="uid://hyviky1gv0ep" path="res://Slime1_Idle_without_shadow.png" id="2_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://hyviky1gv0ep" path="res://Assets/Slime1_Idle_without_shadow.png" id="2_i3pqv"]
 [ext_resource type="Script" uid="uid://1qr0rxxo33rc" path="res://Scripts/gravity.gd" id="2_onrkg"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ofo7f"]
@@ -9,6 +9,7 @@
 script = ExtResource("2_onrkg")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=48142705]
+texture_filter = 3
 texture = ExtResource("2_i3pqv")
 offset = Vector2(0, -10)
 hframes = 6
@@ -19,3 +20,10 @@ vframes = 6
 [node name="RigidBody2D" type="RigidBody2D" parent="CollisionShape2D" unique_id=85627544]
 position = Vector2(-9, -9)
 physics_material_override = SubResource("PhysicsMaterial_ofo7f")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="." unique_id=395570983]
+node_a = NodePath("../StaticBody2D")
+node_b = NodePath("../CollisionShape2D/RigidBody2D")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1149025371]
+position = Vector2(0, -64)

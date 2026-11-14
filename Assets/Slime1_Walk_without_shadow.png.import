@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwss0amll3wg1"
-path="res://.godot/imported/Slime1_Run_without_shadow.png-eb3365fb6d86251b7f4f8f290e6ee522.ctex"
+uid="uid://dckdgxxy1pdku"
+path="res://.godot/imported/Slime1_Walk_without_shadow.png-7aa80639a637244682c3428af971f758.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Slime1_Run_without_shadow.png"
-dest_files=["res://.godot/imported/Slime1_Run_without_shadow.png-eb3365fb6d86251b7f4f8f290e6ee522.ctex"]
+source_file="res://Assets/Slime1_Walk_without_shadow.png"
+dest_files=["res://.godot/imported/Slime1_Walk_without_shadow.png-7aa80639a637244682c3428af971f758.ctex"]
 
 [params]
 
