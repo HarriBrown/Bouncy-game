@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://gom8b28h7k13"]
+
+[ext_resource type="Texture2D" uid="uid://dyfot86rkmdf3" path="res://icon.svg" id="1_4flbx"]
+
+[node name="Player" type="Node2D" unique_id=1003536856]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1572930208]
+scale = Vector2(3, 3)
+texture = ExtResource("1_4flbx")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1309378477]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1986236591]
+scale = Vector2(3, 3)
+debug_color = Color(0.90797305, 0.24781886, 0.4434404, 0.41960785)
