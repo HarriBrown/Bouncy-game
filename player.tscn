@@ -101,7 +101,7 @@ position = Vector2(0, -64)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1864661676]
 texture_filter = 3
 sprite_frames = SubResource("SpriteFrames_72mox")
-frame_progress = 0.65840745
+frame_progress = 0.46904346
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=4256423]
 offset = Vector2(-10, -10)
