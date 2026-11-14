@@ -1,0 +1,18 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Build and export output
+export/
+build/
+
+# Mono/C# specific (if using C#)
+.mono/
+*.csproj
+*.sln
+
+# OS / Editor junk
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
