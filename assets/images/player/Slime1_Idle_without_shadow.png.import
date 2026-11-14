@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dply8uyuj8s3m"
-path="res://.godot/imported/Slime1_Hurt_without_shadow.png-bba1ca8466a78e902c5afaaa4537650f.ctex"
+uid="uid://4572px116q8j"
+path="res://.godot/imported/Slime1_Idle_without_shadow.png-7d4bf6525780b930cf20b4a489fd4f0c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Slime1_Hurt_without_shadow.png"
-dest_files=["res://.godot/imported/Slime1_Hurt_without_shadow.png-bba1ca8466a78e902c5afaaa4537650f.ctex"]
+source_file="res://assets/images/player/Slime1_Idle_without_shadow.png"
+dest_files=["res://.godot/imported/Slime1_Idle_without_shadow.png-7d4bf6525780b930cf20b4a489fd4f0c.ctex"]
 
 [params]
 
