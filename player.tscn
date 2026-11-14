@@ -1,15 +1,21 @@
 [gd_scene format=3 uid="uid://gom8b28h7k13"]
 
-[ext_resource type="Texture2D" uid="uid://dyfot86rkmdf3" path="res://icon.svg" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://hyviky1gv0ep" path="res://Slime1_Idle_without_shadow.png" id="2_i3pqv"]
+[ext_resource type="Script" uid="uid://1qr0rxxo33rc" path="res://Scripts/gravity.gd" id="2_onrkg"]
 
-[node name="Player" type="Node2D" unique_id=1003536856]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ofo7f"]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1572930208]
-scale = Vector2(3, 3)
-texture = ExtResource("1_4flbx")
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=233822148]
+script = ExtResource("2_onrkg")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1309378477]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=48142705]
+texture = ExtResource("2_i3pqv")
+offset = Vector2(0, -10)
+hframes = 6
+vframes = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1986236591]
-scale = Vector2(3, 3)
-debug_color = Color(0.90797305, 0.24781886, 0.4434404, 0.41960785)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1368002192]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="CollisionShape2D" unique_id=85627544]
+position = Vector2(-9, -9)
+physics_material_override = SubResource("PhysicsMaterial_ofo7f")
