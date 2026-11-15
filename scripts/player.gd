@@ -1,13 +1,17 @@
 extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var jump_sound: AudioStreamPlayer2D = $JumpSound
+@onready var death_sound: AudioStreamPlayer2D = $DeathSound
+@onready var collect_sound: AudioStreamPlayer2D = $CollectSound
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -850.0
 
 var was_on_floor := true
 var is_landing := false
-
+var Bounce_factor = 0.4
+var impact_velocity = 0
 
 func _ready() -> void:
 	# Force "Jumping down" to NOT loop, so animation_finished always triggers
@@ -33,6 +37,8 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		is_landing = false
+		jump_sound.play()
+		
 
 	# Movement
 	var direction := Input.get_axis("left", "right")
@@ -40,6 +46,14 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+	#Store what the velocity was before the impact, so that it can be dissapated
+	impact_velocity = -velocity.y
+	#Some reflection stuff, remove this because its useless, or let me improve on it - Harri
+	var collision := move_and_collide(velocity * delta)
+	if collision:
+		var normal := collision.get_normal()
+		# Bounce or slide your velocity using the normal
+		velocity = velocity.bounce(normal)
 
 	move_and_slide()
 
@@ -58,6 +72,9 @@ func _physics_process(delta: float) -> void:
 		# Just landed
 		is_landing = true
 		animated_sprite_2d.play("Jumping down")
+		#Extra jump, never get a break NOT REALLY WORKING RN
+		if velocity.y > -0.1*JUMP_VELOCITY:
+			velocity.y = impact_velocity * Bounce_factor
 
 	elif is_landing:
 		# If the player starts moving, cancel landing immediately
