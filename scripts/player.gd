@@ -1,5 +1,8 @@
 extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var jump_sound: AudioStreamPlayer2D = $JumpSound
+@onready var death_sound: AudioStreamPlayer2D = $DeathSound
+@onready var collect_sound: AudioStreamPlayer2D = $CollectSound
 
 
 const SPEED = 300.0
@@ -9,9 +12,7 @@ const JUMP_VELOCITY = -850.0
 func _physics_process(delta: float) -> void:
 	if velocity.x < -1:
 		animated_sprite_2d.animation = "Running left"
-	else:
-		animated_sprite_2d.animation = "Idle"
-	if velocity.x > 1:
+	elif velocity.x > 1:
 		animated_sprite_2d.animation = "Running right"
 	else:
 		animated_sprite_2d.animation = "Idle"
@@ -23,6 +24,7 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		jump_sound.play()
 
 	# Get the input direction and handle the movement/deceleration.
 	var direction := Input.get_axis("left", "right")
