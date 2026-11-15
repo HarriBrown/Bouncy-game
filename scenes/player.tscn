@@ -320,7 +320,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_khis8")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Jumping down",
 "speed": 5.0
 }, {
