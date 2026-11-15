@@ -77,22 +77,6 @@ region = Rect2(256, 0, 64, 64)
 atlas = ExtResource("2_fjrip")
 region = Rect2(320, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2wuci"]
-atlas = ExtResource("3_smehm")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iruf7"]
-atlas = ExtResource("3_smehm")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j5n4i"]
-atlas = ExtResource("3_smehm")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_634y6"]
-atlas = ExtResource("3_smehm")
-region = Rect2(192, 0, 64, 64)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_efrwb"]
 atlas = ExtResource("3_smehm")
 region = Rect2(256, 0, 64, 64)
@@ -291,18 +275,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2wuci")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iruf7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j5n4i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_634y6")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_efrwb")
 }, {
 "duration": 1.0,
@@ -444,7 +416,7 @@ shape = SubResource("RectangleShape2D_1en6p")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=455839997]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_71c1q")
-animation = &"Dying"
+animation = &"Jumping down"
 autoplay = "Idle"
 speed_scale = 3.0
 
