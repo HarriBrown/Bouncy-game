@@ -10,3 +10,4 @@ stream = ExtResource("3_sugp2")
 autoplay = true
 
 [node name="LevelRoot" parent="." unique_id=1394237129 instance=ExtResource("2_0wfyh")]
+position = Vector2(-33, -25)

@@ -10,7 +10,7 @@ signal died
 @onready var collect_sound: AudioStreamPlayer2D = $CollectSound
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -850.0
+const JUMP_VELOCITY = -900.0
 
 var was_on_floor := true
 var is_landing := false
@@ -46,9 +46,10 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		is_landing = false
 
 func bounce_off_enemy() -> void:
-	velocity.y = JUMP_VELOCITY * 0.85
+	velocity.y = JUMP_VELOCITY * 1.15
 	is_landing = false
 	jump_sound.play()
+
 
 func take_damage(amount: int, knockback_dir: Vector2 = Vector2.ZERO) -> void:
 	if is_dead or is_invincible:
@@ -57,6 +58,9 @@ func take_damage(amount: int, knockback_dir: Vector2 = Vector2.ZERO) -> void:
 	health = max(0, health - amount)
 	health_changed.emit(health, max_health)
 	
+	if position.y <= 25:
+		die()
+		
 	if health <= 0:
 		die()
 	else:
@@ -69,6 +73,7 @@ func die() -> void:
 	if is_dead:
 		return
 	is_dead = true
+	
 	velocity = Vector2.ZERO
 	death_sound.play()
 	animated_sprite_2d.play("Dying")
@@ -83,6 +88,9 @@ func collect_apple() -> void:
 	apple_collected.emit(apples_collected)
 
 func _physics_process(delta: float) -> void:
+	if position.y > 720:
+		die()
+	
 	if is_dead:
 		# Apply gravity while dying so the corpse falls if in mid-air
 		if not is_on_floor():

@@ -1,6 +1,11 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://cuixw2m136757"]
 
-[ext_resource type="Script" path="res://scripts/hud.gd" id="1_hud"]
+[ext_resource type="Script" uid="uid://dnudmpdmbh8eo" path="res://scripts/hud.gd" id="1_hud"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ui"]
+font_size = 20
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
 bg_color = Color(0.2, 0.2, 0.2, 0.8)
@@ -10,7 +15,7 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fill"]
-bg_color = Color(0.85, 0.2, 0.2, 1.0)
+bg_color = Color(0.85, 0.2, 0.2, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -21,15 +26,10 @@ font_size = 40
 outline_size = 6
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_ui"]
-font_size = 20
-outline_size = 4
-outline_color = Color(0, 0, 0, 1)
-
-[node name="HUD" type="CanvasLayer"]
+[node name="HUD" type="CanvasLayer" unique_id=1809739847]
 script = ExtResource("1_hud")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1199970120]
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 50.0
@@ -39,20 +39,20 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1530098401]
 layout_mode = 2
 theme_override_constants/separation = 40
 
-[node name="HealthContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="HealthContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1571237581]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="HealthLabel" type="Label" parent="MarginContainer/HBoxContainer/HealthContainer"]
+[node name="HealthLabel" type="Label" parent="MarginContainer/HBoxContainer/HealthContainer" unique_id=1471352614]
 layout_mode = 2
 text = "HP: 100/100"
 label_settings = SubResource("LabelSettings_ui")
 
-[node name="HealthBar" type="ProgressBar" parent="MarginContainer/HBoxContainer/HealthContainer"]
+[node name="HealthBar" type="ProgressBar" parent="MarginContainer/HBoxContainer/HealthContainer" unique_id=1269360353]
 custom_minimum_size = Vector2(160, 24)
 layout_mode = 2
 size_flags_vertical = 4
@@ -61,12 +61,12 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_fill")
 value = 100.0
 show_percentage = false
 
-[node name="AppleLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+[node name="AppleLabel" type="Label" parent="MarginContainer/HBoxContainer" unique_id=2129806813]
 layout_mode = 2
 text = "Apples: 0 / 0"
 label_settings = SubResource("LabelSettings_ui")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=341180043]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -74,7 +74,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="MessageLabel" type="Label" parent="CenterContainer"]
+[node name="MessageLabel" type="Label" parent="CenterContainer" unique_id=365934639]
 layout_mode = 2
 text = "YOU WIN!"
 label_settings = SubResource("LabelSettings_msg")
