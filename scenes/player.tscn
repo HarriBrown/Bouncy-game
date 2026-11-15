@@ -382,7 +382,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_khis8")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Jumping down",
 "speed": 5.0
 }, {
@@ -559,7 +559,6 @@ shape = SubResource("RectangleShape2D_1en6p")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=455839997]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_71c1q")
-animation = &"Idle"
+animation = &"Jumping down"
 autoplay = "Idle"
-frame_progress = 0.08058629
 speed_scale = 3.0
