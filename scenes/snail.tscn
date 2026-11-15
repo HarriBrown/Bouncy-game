@@ -362,7 +362,7 @@ size = Vector2(102, 40)
 [sub_resource type="CircleShape2D" id="CircleShape2D_1en6p"]
 radius = 33.0
 
-[node name="enemy" type="Area2D" unique_id=477249322]
+[node name="enemy" type="Area2D" unique_id=477249322 groups=["Enemy"]]
 script = ExtResource("1_vewxh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=629811100]
@@ -370,7 +370,7 @@ texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_1en6p")
 animation = &"Walk"
-autoplay = "Idle"
+autoplay = "Walk"
 frame_progress = 0.17655712
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1688576416]

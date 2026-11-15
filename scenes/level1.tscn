@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://mr327iyagt0y" path="res://assets/images/background/Gray.png" id="1_m7ahb"]
 [ext_resource type="PackedScene" uid="uid://keky05lvf6mb" path="res://scenes/player.tscn" id="2_wwpf4"]
 [ext_resource type="PackedScene" uid="uid://dsn1r58kb8xd5" path="res://scenes/snail.tscn" id="4_dwgg1"]
+[ext_resource type="Script" path="res://scripts/level1.gd" id="1_lvlscript"]
+[ext_resource type="PackedScene" path="res://scenes/hud.tscn" id="5_hud"]
+[ext_resource type="PackedScene" path="res://scenes/apple.tscn" id="6_apple"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ypoqj"]
 texture = ExtResource("1_g2h75")
@@ -169,6 +172,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ypoqj")
 
 [node name="LevelRoot" type="Node2D" unique_id=1394237129]
+script = ExtResource("1_lvlscript")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1138178406]
 texture_filter = 1
@@ -194,3 +198,31 @@ position = Vector2(444, 574)
 
 [node name="enemy2" parent="Node2D" unique_id=234194472 instance=ExtResource("4_dwgg1")]
 position = Vector2(945, 572)
+
+[node name="HUD" parent="." unique_id=987654321 instance=ExtResource("5_hud")]
+
+[node name="Apples" type="Node2D" parent="." unique_id=876543210]
+
+[node name="Apple1" parent="Apples" unique_id=101010101 instance=ExtResource("6_apple")]
+position = Vector2(280, 500)
+
+[node name="Apple2" parent="Apples" unique_id=101010102 instance=ExtResource("6_apple")]
+position = Vector2(380, 420)
+
+[node name="Apple3" parent="Apples" unique_id=101010103 instance=ExtResource("6_apple")]
+position = Vector2(580, 100)
+
+[node name="Apple4" parent="Apples" unique_id=101010104 instance=ExtResource("6_apple")]
+position = Vector2(640, 100)
+
+[node name="Apple5" parent="Apples" unique_id=101010105 instance=ExtResource("6_apple")]
+position = Vector2(610, 320)
+
+[node name="Apple6" parent="Apples" unique_id=101010106 instance=ExtResource("6_apple")]
+position = Vector2(670, 320)
+
+[node name="Apple7" parent="Apples" unique_id=101010107 instance=ExtResource("6_apple")]
+position = Vector2(850, 500)
+
+[node name="Apple8" parent="Apples" unique_id=101010108 instance=ExtResource("6_apple")]
+position = Vector2(950, 420)
